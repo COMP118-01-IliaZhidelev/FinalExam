@@ -79,8 +79,9 @@ int main()
 	{
 		std::cout << "1) Enter data in matrix (range -2.5 to 2.5)\n";
 		std::cout << "2) Sum of all numbers\n";
-		std::cout << "3) Show data in matrix\n";
-		std::cout << "4) Exit\n"; 
+		std::cout << "3) Count ones\n";
+		std::cout << "4) Show data in matrix\n";
+		std::cout << "5) Exit\n"; 
 		int choice = 0;
 		std::cout << "Please enter choice\n";
 		std::cin >> choice;
@@ -102,9 +103,17 @@ int main()
 		}
 			break;
 		case 3:
+		{
+			auto counter = countOnes(matrix);
+			std::cout << counter << std::endl;
+		}
+		break;
+
+		case 4:
 			printMatrix(matrix);
 			break;
-		case 4:
+
+		case 5:
 			isRunning = false;
 			break;
 		default:
