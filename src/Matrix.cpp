@@ -1,7 +1,15 @@
+/** \file Matrix.cpp
+* \brief it contains implememtations of matrix functions
+* \author Ilia Zhidelev
+* \date 27.05.2024
+*/
 #include "Matrix.h"
 #include <cassert>
 #include <iostream>
-
+/**
+* calculates sum of all matrix elements
+* @param matrix: matrix to work on
+*/
 int sumOfAllNumber(double matrix[ROW_SIZE][COLUMN_SIZE])
 {
 	assert(ROW_SIZE > 0 && COLUMN_SIZE > 0);
@@ -16,6 +24,11 @@ int sumOfAllNumber(double matrix[ROW_SIZE][COLUMN_SIZE])
 	return sum;
 }
 
+/**
+* fills particular row of matrix
+* @param matrix: matrix to work on
+* @param rowNumber: the number of row that must be filled
+*/
 void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 {
 	assert(rowNumber < ROW_SIZE && ROW_SIZE > 0);
@@ -30,15 +43,16 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 			i--;
 		}
 	}
-	
 	for (int i = 0; i < COLUMN_SIZE; i++)
 	{
 		matrix[rowNumber][i] = input[i];
 	}
-	
-	
 }
 
+/**
+* prints matrix
+* @param matrix: matrix to work on
+*/
 void printMatrix(const double matrix[ROW_SIZE][COLUMN_SIZE])
 {
 	assert(COLUMN_SIZE > 0 && ROW_SIZE > 0);
@@ -52,6 +66,11 @@ void printMatrix(const double matrix[ROW_SIZE][COLUMN_SIZE])
 	}
 }
 
+/**
+* counts all 1 in the matrix
+* @param matrix: matrix to work on
+* @return the amount of 1
+*/
 int countOnes(const double matrix[ROW_SIZE][COLUMN_SIZE])
 {
 	int counter = 0;

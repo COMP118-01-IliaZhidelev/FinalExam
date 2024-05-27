@@ -1,9 +1,17 @@
+/** \file Main.cpp
+* \brief it contains the entry point of executable
+* \author Ilia Zhidelev
+* \date 27.05.2024
+*/
+
 #include<iostream>
 #include<cassert>
 #include "Matrix.h"
 
-
-
+/**
+* The entry point of the program, main
+* @return Returns 0 if success, any other value otherwise
+*/
 int main()
 {
 	
@@ -41,8 +49,7 @@ int main()
 			auto counter = countOnes(matrix);
 			std::cout << counter << std::endl;
 		}
-		break;
-
+			break;
 		case 4:
 			printMatrix(matrix);
 			break;
