@@ -15,11 +15,9 @@
 int main()
 {
 	auto isRunning = true;
-	double matrix[4][3] = {0,0,0,   0,0,0, 0,0,0, 0,0,0 };
+	double matrix[4][3] = {0,0,0, 0,0,0, 0,0,0, 0,0,0 };
 	while (isRunning)
 	{
-		
-
 		std::cout << "1) Enter data in matrix (range -2.5 to 2.5)\n";
 		std::cout << "2) Sum of all numbers\n";
 		std::cout << "3) Count ones\n";
@@ -28,6 +26,7 @@ int main()
 		std::cout << "Please enter choice\n";
 		int choice = 0;
 		std::cin >> choice;
+		// user can input string
 		if (std::cin.fail())
 		{
 			std::cout << "Invalid input\n";

@@ -37,6 +37,7 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 	for (int i = 0; i < COLUMN_SIZE; i++)
 	{
 		std::cin >> input[i];
+		// user can input string
 		if (std::cin.fail())
 		{
 			std::cout << "Invalid input\n";
@@ -54,6 +55,7 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 	{
 		matrix[rowNumber][i] = input[i];
 	}
+	// to make sure the cin is clear
 	std::cin.clear();
 	std::cin.ignore(1000, '\n');
 }
@@ -82,6 +84,7 @@ void printMatrix(const double matrix[ROW_SIZE][COLUMN_SIZE])
 */
 int countOnes(const double matrix[ROW_SIZE][COLUMN_SIZE])
 {
+	assert(ROW_SIZE > 0 && COLUMN_SIZE > 0);
 	int counter = 0;
 	for (int i = 0; i < ROW_SIZE; i++)
 	{
