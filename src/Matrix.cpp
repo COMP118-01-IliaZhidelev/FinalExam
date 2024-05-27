@@ -37,6 +37,13 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 	for (int i = 0; i < COLUMN_SIZE; i++)
 	{
 		std::cin >> input[i];
+		if (std::cin.fail())
+		{
+			std::cout << "Invalid input\n";
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
+			i = 0;
+		}
 		if (abs(input[i]) > 2.5)
 		{
 			std::cout << "Input must be in range (-2.5,2.5)\n";
@@ -47,6 +54,8 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 	{
 		matrix[rowNumber][i] = input[i];
 	}
+	std::cin.clear();
+	std::cin.ignore(1000, '\n');
 }
 
 /**
