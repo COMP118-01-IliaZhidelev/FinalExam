@@ -22,23 +22,23 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], int rowNumber)
 {
 	assert(rowNumber < ROW_SIZE && ROW_SIZE > 0);
 	assert(COLUMN_SIZE> 0);
-	auto input = 0;
+	double input[COLUMN_SIZE]= {0,0,0};
 	int completedInputs = 0;
-	while (completedInputs != COLUMN_SIZE)
+	for (int i = 0; i < COLUMN_SIZE; i++)
 	{
-		std::cin >> input;
-		if (std::cin.fail())
-		{
-			std::cout << "Invalid input try again\n";
-			continue;
-		}
-		if (abs(input) > 2.5)
+		std::cin >> input[i];
+		if (abs(input[i]) > 2.5)
 		{
 			std::cout << "Input must be in range (-2.5,2.5)\n";
-			continue;
+			i--;
 		}
-		matrix[rowNumber][completedInputs++] = input;
 	}
+	
+	for (int i = 0; i < COLUMN_SIZE; i++)
+	{
+		matrix[rowNumber][i] = input[i];
+	}
+	
 	
 }
 
@@ -72,15 +72,18 @@ int main()
 		{
 		case 1:
 		{
-			for (int i = 0; i < COLUMN_SIZE; i++)
+			for (int i = 0; i < ROW_SIZE; i++)
 			{
-				std::cout << "Enter " << i << "row "<< std::endl;
+				std::cout << "Enter " << i << " row "<< std::endl;
 				enterRow(matrix, i);
 			}
 			break;
 		}
 		case 2: 
+		{
 			auto sum = sumOfAllNumber(matrix);
+			std::cout << sum << "\n";
+		}
 			break;
 		case 3:
 			printMatrix(matrix);
