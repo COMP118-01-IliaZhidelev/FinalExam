@@ -54,6 +54,22 @@ void printMatrix(const double matrix[ROW_SIZE][COLUMN_SIZE])
 	}
 }
 
+int countOnes(const double matrix[ROW_SIZE][COLUMN_SIZE])
+{
+	int counter = 0;
+	for (int i = 0; i < ROW_SIZE; i++)
+	{
+		for (int j = 0; j < COLUMN_SIZE; j++)
+		{
+			if (matrix[i][j] == 1)
+			{
+				counter++;
+			}
+		}
+	}
+	return counter;
+}
+
 int main()
 {
 	
