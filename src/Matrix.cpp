@@ -78,7 +78,9 @@ int countOnes(const double matrix[ROW_SIZE][COLUMN_SIZE])
 	{
 		for (int j = 0; j < COLUMN_SIZE; j++)
 		{
-			if (matrix[i][j] == 1)
+			// introduce a bug
+			if (matrix[i][j] == 1.1)
+			//if (matrix[i][j] == 1)
 			{
 				counter++;
 			}
