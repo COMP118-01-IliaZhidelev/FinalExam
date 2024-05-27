@@ -18,12 +18,11 @@ int sumOfAllNumber(double matrix[ROW_SIZE][COLUMN_SIZE])
 	return sum;
 }
 
-void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], int rowNumber)
+void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], const int rowNumber)
 {
 	assert(rowNumber < ROW_SIZE && ROW_SIZE > 0);
 	assert(COLUMN_SIZE> 0);
 	double input[COLUMN_SIZE]= {0,0,0};
-	int completedInputs = 0;
 	for (int i = 0; i < COLUMN_SIZE; i++)
 	{
 		std::cin >> input[i];
@@ -42,7 +41,7 @@ void enterRow(double matrix[ROW_SIZE][COLUMN_SIZE], int rowNumber)
 	
 }
 
-void printMatrix(double matrix[ROW_SIZE][COLUMN_SIZE])
+void printMatrix(const double matrix[ROW_SIZE][COLUMN_SIZE])
 {
 	assert(COLUMN_SIZE > 0 && ROW_SIZE > 0);
 	for (int i = 0; i < ROW_SIZE; i++)
@@ -67,6 +66,7 @@ int main()
 		std::cout << "3) Show data in matrix\n";
 		std::cout << "4) Exit\n"; 
 		int choice = 0;
+		std::cout << "Please enter choice\n";
 		std::cin >> choice;
 		switch (choice)
 		{
@@ -81,7 +81,7 @@ int main()
 		}
 		case 2: 
 		{
-			auto sum = sumOfAllNumber(matrix);
+			const auto sum = sumOfAllNumber(matrix);
 			std::cout << sum << "\n";
 		}
 			break;
